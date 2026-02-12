@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Знаки зодиака</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Знаки зодиака</h1>
+
+      <div class="zodiac-container">
+        <div class="zodiac-input">
+          <label>Дата рождения</label>
+          <input type="text" placeholder="дд.мм.гг" maxlength="8" />
+        </div>
+
+        <div class="zodiac-input">
+          <button type="button">Выполнить</button>
+        </div>
+
+        <div class="result-container">
+          <div class="result-content">
+            <div class="zodiac-image">
+              <img id="zodiac-img" alt="Знак зодиака" />
+            </div>
+            <div class="zodiac-info">
+              <h2 id="zodiac-name"></h2>
+              <p id="zodiac-dates"></p>
+              <p id="zodiac-description"></p>
+              <p id="birth-date"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

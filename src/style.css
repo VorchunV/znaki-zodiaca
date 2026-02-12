@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(45deg, #a8edea, #fed6e3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.zodiac-container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.zodiac-input {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.zodiac-input label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.zodiac-input input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.zodiac-input input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.zodiac-input input::placeholder {
+  color: #999;
+  text-align: center;
+}
+
+.zodiac-input button {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(45deg, #8baaaa, #ae8b9c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.zodiac-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.zodiac-input button:active {
+  transform: translateY(0);
+}
+
+/* Контейнер результата - находится внутри zodiac-container */
+.result-container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.5s ease;
+}
+
+.result-container.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.zodiac-image {
+  flex: 0 0 150px;
+  text-align: center;
+}
+
+.zodiac-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.zodiac-image img:hover {
+  transform: scale(1.1);
+}
+
+.zodiac-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.zodiac-info h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.zodiac-info p {
+  margin-bottom: 10px;
+  color: #666;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+#zodiac-dates {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+#zodiac-description {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+#birth-date {
+  color: #764ba2;
+  font-weight: 600;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .zodiac-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  
+  .zodiac-input {
+    min-width: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .result-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .zodiac-image {
+    flex: 0 0 auto;
+  }
+  
+  .zodiac-image img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .zodiac-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .zodiac-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .zodiac-container {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .zodiac-input input,
+  .zodiac-input button {
+    padding: 12px;
+  }
+  
+  .zodiac-info h2 {
+    font-size: 1.3rem;
+  }
+  
+  .zodiac-image img {
+    width: 80px;
+    height: 80px;
+  }
+}
